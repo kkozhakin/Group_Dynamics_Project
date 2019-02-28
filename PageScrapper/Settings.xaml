@@ -1,0 +1,118 @@
+﻿<Window x:Class="PageScrapper.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PageScrapper"
+        mc:Ignorable="d"
+        Title="Settings" 
+		Height="390" 
+		Width="300"  
+		MinHeight="390" 
+		MinWidth="300" 
+		MaxWidth="300" 
+		MaxHeight="390">
+
+
+	<StackPanel VerticalAlignment="Top"
+				Orientation="Vertical"  
+			
+				
+				HorizontalAlignment="Center">
+
+
+
+		<TextBlock HorizontalAlignment="Center"  
+				TextWrapping="Wrap"
+				>
+			<Run Text="Число потоков: "
+				       FontSize="20"
+				   />
+			<Run Text="{Binding Value, ElementName=slider}" 
+					   FontSize="20" 
+				   />
+		</TextBlock >
+
+		<Slider Name="slider"   
+				HorizontalAlignment="Center"
+				Height="20"  Width="250" RenderTransformOrigin="0.517,0.37" Maximum="10" Minimum="1" 
+				Value="5"
+				IsSnapToTickEnabled="True"
+				TickFrequency="1"
+				
+				/>
+		<TextBlock HorizontalAlignment="Center"  
+				   TextWrapping="Wrap" 
+				   Text="Рекомендуемое значение - 4" 
+				   Margin="0 0 0 5"
+				   FontSize="12"/>
+
+
+		<TextBlock  
+			HorizontalAlignment="Center"
+				   TextWrapping="Wrap" 
+				   Text="URL" 
+				   VerticalAlignment="Top" 
+				   FontSize="20" 
+                   />
+
+		<TextBox 
+			Name="URLBox" Height="30" 
+			FontSize="20"
+			
+			
+			/>
+		
+		<TextBlock 
+			Height="30" 
+			Text="SubDomen"
+			HorizontalAlignment="Center"
+			FontSize="20"
+		   />
+
+		<TextBox Name="SubDomen" 
+				 Height="30" 
+				 FontSize="20"
+				 
+			 />
+
+		<TextBlock 
+			Height="30" 
+			Text="Domen"
+			HorizontalAlignment="Center"
+			FontSize="20"
+		   />
+
+		<TextBox Name="Domen" 
+				 Height="30" 
+				 FontSize="20"
+			
+			 />
+
+		<TextBlock 
+			Height="30" 
+			Text="Way"
+			HorizontalAlignment="Center"
+			FontSize="20"
+		   />
+
+		<TextBox Name="Way" 
+				 Height="30" 
+				 FontSize="20"
+				
+			 />
+
+		<Button Content="Продолжить" 
+				FontSize="20" 
+				Margin="0 10 0 10"
+				Foreground="White"  
+				Background="#015aaa" 
+				Click="Button_Click" 
+				/>
+		
+	</StackPanel>
+
+
+
+
+</Window>

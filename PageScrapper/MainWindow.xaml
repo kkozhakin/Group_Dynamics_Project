@@ -17,7 +17,8 @@
 		</Grid.RowDefinitions>
 		<WrapPanel Grid.Row="0">
 			<Image Source="imj/logo.png" Margin="2 1 1 0"/>
-			<Button Content="Настройки" 
+			<Button Name="SettingsButton"
+                    Content="Настройки" 
 					Height="50" 
 					Width="70" 
 					Margin="1 1 1 0" 
@@ -26,23 +27,43 @@
 					Click="settings_click"
 					
 					/>
-			<Button  Content="Сохранить" 
+			<Button Name ="SaveButton" 
+                    Content="Сохранить" 
 					 Height="50" 
 					 Width="70" 
 					 Margin="1 1 1 0" 
 					 Foreground="White"  
 					 Background="#015aaa"/>
 			
-			<Button  Content="Старт" 
+			<Button Name="StartButton"    
+                    Content="Старт" 
 					 Height="50" 
 					 Width="70"
 					 Margin="1 1 1 0" 
 					 Foreground="White"  
 					 Background="#015aaa"
 					 Click="start_click"/>
-			<Button  Content="Пауза" Height="50" Width="70" Margin="1 1 1 0" Foreground="White"  Background="#015aaa"/>
-			<Button  Content="Стоп" Height="50" Width="70" Margin="1 1 1 0" Foreground="White"  Background="#015aaa"/>
-			<Button  Content="Справка" Height="50" Width="70" Margin="1 1 1 0" Foreground="White"  Background="#015aaa"/>
+			<Button Name="PauseButton" 
+                    Content="Пауза" 
+                     Height="50" 
+                     Width="70" 
+                     Margin="1 1 1 0" 
+                     Foreground="White"  
+                     Background="#015aaa"/>
+			<Button Name="StopButton" 
+                    Content="Стоп" 
+                     Height="50" 
+                     Width="70" 
+                     Margin="1 1 1 0" 
+                     Foreground="White"  
+                     Background="#015aaa"/>
+			<Button Name="HelpButton" 
+                    Content="Справка" 
+                     Height="50" 
+                     Width="70" 
+                     Margin="1 1 1 0" 
+                     Foreground="White"  
+                     Background="#015aaa"/>
 		</WrapPanel>
 		<ListBox Grid.Row="1" Name="References">
 			

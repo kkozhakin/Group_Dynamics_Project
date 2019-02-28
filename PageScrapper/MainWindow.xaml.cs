@@ -32,10 +32,24 @@ namespace PageScrapper
         {
             InitializeComponent();
             manager.anouncer = AddBrokenLink;
-            
+            manager.skippedChanges = updateStat;
            
 
         }
+
+        public void updateStat()
+        {
+            {
+                this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                    (ThreadStart)delegate ()
+                    {
+                        DoneText.Text = manager.done.ToString();
+                        BrokenText.Text = manager.bad.ToString();
+                    }
+                );
+            }
+        }
+
         /*   Event add broken link to table
          */
         void AddBrokenLink(Link link)
@@ -58,11 +72,12 @@ namespace PageScrapper
         }
         private void start_click(object sender, RoutedEventArgs e)
         {
-            if(running)
-                manager.Clear();
+          
             manager.end = true;
 
-            
+            manager.SetURL(Set.URL);
+            manager.setRestriction(Set.dom, Set.subdom, Set.way);
+
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
 

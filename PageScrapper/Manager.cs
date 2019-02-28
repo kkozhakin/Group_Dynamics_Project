@@ -29,7 +29,7 @@ namespace logic
 
         public bool Fits(Link link)
         {
-            if (rs.dom != link.MainDomen)
+            if (!link.MainDomen.Contains(rs.dom))
             {
                 return false;
             }
@@ -72,6 +72,7 @@ namespace logic
             while (true)
             {
                 Thread.Sleep(2500);
+                skippedChanges();
                 bool active = false;
                 foreach (var parser in parsers)
                 {
@@ -80,9 +81,11 @@ namespace logic
                 if (!active || end)
                 {
                     end = true;
+                    skippedChanges();
                     return;
                 }
-
+                
+          
             }
 
 
@@ -91,9 +94,7 @@ namespace logic
         public delegate void changes();
 
         public changes skippedChanges;
-        public changes doneChenges;
-        public changes badChanges;
-
+        
         public void Clear()
         {
             inProcess = new ConcurrentQueue<Link>();

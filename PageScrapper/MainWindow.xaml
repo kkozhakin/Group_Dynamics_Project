@@ -24,9 +24,8 @@
 					Margin="1 1 1 0" 
 					Foreground="White"  
 					Background="#015aaa" 
-					Click="settings_click"
-					
-					/>
+					Click="settings_click"/>
+            
 			<Button Name ="SaveButton" 
                     Content="Сохранить" 
 					 Height="50" 
@@ -43,13 +42,16 @@
 					 Foreground="White"  
 					 Background="#015aaa"
 					 Click="start_click"/>
+            
 			<Button Name="PauseButton" 
                     Content="Пауза" 
                      Height="50" 
                      Width="70" 
                      Margin="1 1 1 0" 
                      Foreground="White"  
-                     Background="#015aaa"/>
+                     Background="#015aaa"
+                     Click="start_click"/>
+            
 			<Button Name="StopButton" 
                     Content="Стоп" 
                      Height="50" 
@@ -57,6 +59,7 @@
                      Margin="1 1 1 0" 
                      Foreground="White"  
                      Background="#015aaa"/>
+            
 			<Button Name="HelpButton" 
                     Content="Справка" 
                      Height="50" 
@@ -64,6 +67,7 @@
                      Margin="1 1 1 0" 
                      Foreground="White"  
                      Background="#015aaa"/>
+            
 		</WrapPanel>
 		<ListBox Grid.Row="1" Name="References">
 			

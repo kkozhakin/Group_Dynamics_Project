@@ -21,7 +21,6 @@ namespace PageScrapper
         public static string dom = "";
         public static string way = "";
         public static int thread_num = 4;
-       
     }
     /// <summary>
     /// Interaction logic for Settings.xaml

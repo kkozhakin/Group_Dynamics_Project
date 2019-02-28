@@ -53,29 +53,35 @@ namespace PageScrapper
         {
             Settings set = new Settings();
             set.Owner = this;
-            set.Show();
-            
-            
-            
+            set.ShowDialog();
         }
         private void start_click(object sender, RoutedEventArgs e)
         {
             if(running)
-            manager.Clear();
+                manager.Clear();
             manager.end = true;
             
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
-            
+
+            SettingsButton.IsEnabled = false;
+            SaveButton.IsEnabled = false;
+            StartButton.IsEnabled = false;
         }
         private void stop_click(object sender, RoutedEventArgs e)
         {
             manager.end = true;
-            
+
+       
+            SettingsButton.IsEnabled = true;
+            SaveButton.IsEnabled = true;
+            StartButton.IsEnabled = true;
+
         }
         private void pause_click(object sender, RoutedEventArgs e)
         {
 
+            StartButton.IsEnabled = true;
         }
         private void save_click(object sender, RoutedEventArgs e)
         {

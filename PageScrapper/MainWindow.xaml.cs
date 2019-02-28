@@ -46,7 +46,7 @@ namespace PageScrapper
                     itm.Content = link.ToString();
                     References.Items.Add(itm);
                 }
-                );
+            );
         }
 
         private void settings_click(object sender, RoutedEventArgs e)
@@ -64,28 +64,41 @@ namespace PageScrapper
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
 
+            pbStatus.IsIndeterminate = true;
+            pbText.Text = "В процессе...";
+
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
             StartButton.IsEnabled = false;
+            StopButton.IsEnabled = true;
+            PauseButton.IsEnabled = true;
         }
         private void stop_click(object sender, RoutedEventArgs e)
         {
             manager.end = true;
 
-       
+            pbStatus.IsIndeterminate = false;
+            pbText.Text = "Остановлено";
+
             SettingsButton.IsEnabled = true;
             SaveButton.IsEnabled = true;
             StartButton.IsEnabled = true;
+            StopButton.IsEnabled = false;
+            PauseButton.IsEnabled = false;
 
         }
         private void pause_click(object sender, RoutedEventArgs e)
         {
+            pbStatus.IsIndeterminate = false;
+            pbText.Text = "Приостановлено";
 
             StartButton.IsEnabled = true;
+            PauseButton.IsEnabled = false;
         }
         private void save_click(object sender, RoutedEventArgs e)
         {
 
+            
         }
         private void help_click(object sender, RoutedEventArgs e)
         {

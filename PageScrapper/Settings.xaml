@@ -14,7 +14,7 @@
 		MaxHeight="390">
 
 
-	<StackPanel VerticalAlignment="Top"
+    <StackPanel VerticalAlignment="Top"
 				Orientation="Vertical"  
 			
 				
@@ -22,7 +22,7 @@
 
 
 
-		<TextBlock HorizontalAlignment="Center"  
+        <TextBlock HorizontalAlignment="Center"  
 				TextWrapping="Wrap"
 				>
 			<Run Text="Число потоков: "
@@ -31,9 +31,9 @@
 			<Run Text="{Binding Value, ElementName=slider}" 
 					   FontSize="20" 
 				   />
-		</TextBlock >
+        </TextBlock >
 
-		<Slider Name="slider"   
+        <Slider Name="slider"   
 				HorizontalAlignment="Center"
 				Height="20"  Width="250" RenderTransformOrigin="0.517,0.37" Maximum="10" Minimum="1" 
 				Value="5"
@@ -41,14 +41,14 @@
 				TickFrequency="1"
 				
 				/>
-		<TextBlock HorizontalAlignment="Center"  
+        <TextBlock HorizontalAlignment="Center"  
 				   TextWrapping="Wrap" 
 				   Text="Рекомендуемое значение - 4" 
 				   Margin="0 0 0 5"
 				   FontSize="12"/>
 
 
-		<TextBlock  
+        <TextBlock  
 			HorizontalAlignment="Center"
 				   TextWrapping="Wrap" 
 				   Text="URL" 
@@ -56,63 +56,58 @@
 				   FontSize="20" 
                    />
 
-		<TextBox 
+        <TextBox 
 			Name="URLBox" Height="30" 
 			FontSize="20"
 			
 			
 			/>
-		
-		<TextBlock 
+
+        <TextBlock 
 			Height="30" 
 			Text="SubDomen"
 			HorizontalAlignment="Center"
 			FontSize="20"
 		   />
 
-		<TextBox Name="SubDomen" 
+        <TextBox Name="SubDomen" 
 				 Height="30" 
 				 FontSize="20"
 				 
 			 />
 
-		<TextBlock 
+        <TextBlock 
 			Height="30" 
 			Text="Domen"
 			HorizontalAlignment="Center"
 			FontSize="20"
 		   />
 
-		<TextBox Name="Domen" 
+        <TextBox Name="Domen" 
 				 Height="30" 
 				 FontSize="20"
 			
 			 />
 
-		<TextBlock 
+        <TextBlock 
 			Height="30" 
 			Text="Way"
 			HorizontalAlignment="Center"
 			FontSize="20"
 		   />
 
-		<TextBox Name="Way" 
+        <TextBox Name="Way" 
 				 Height="30" 
 				 FontSize="20"
 				
 			 />
 
-		<Button Content="Продолжить" 
+        <Button Content="Продолжить" 
 				FontSize="20" 
 				Margin="0 10 0 10"
 				Foreground="White"  
 				Background="#015aaa" 
 				Click="Button_Click" 
 				/>
-		
-	</StackPanel>
-
-
-
-
+    </StackPanel>
 </Window>

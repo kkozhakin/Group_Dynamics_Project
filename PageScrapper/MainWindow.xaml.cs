@@ -33,8 +33,7 @@ namespace PageScrapper
             InitializeComponent();
             manager.anouncer = AddBrokenLink;
             manager.skippedChanges = updateStat;
-           
-
+            manager.endOfSearch = killSearch;
         }
 
         public void updateStat()
@@ -43,8 +42,30 @@ namespace PageScrapper
                 this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                     (ThreadStart)delegate ()
                     {
-                        DoneText.Text = manager.done.ToString();
-                        BrokenText.Text = manager.bad.ToString();
+                        DoneTextNumber.Text = manager.done.ToString();
+                        BrokenTextNumber.Text = manager.bad.ToString();
+                    }
+                );
+            }
+        }
+
+        public void killSearch()
+        {
+            {
+                this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                    (ThreadStart)delegate ()
+                    {
+                        pbStatus.IsIndeterminate = false;
+                        pbText.Text = "Готово!";
+                        MessageBox.Show($" Поиск завершен!\n Просмотренно: {manager.done}\n Повреждённых: {manager.bad}");
+
+
+                        SettingsButton.IsEnabled = true;
+                        SaveButton.IsEnabled = true;
+                        StartButton.IsEnabled = false;
+                        StopButton.IsEnabled = false;
+                        PauseButton.IsEnabled = false;
+
                     }
                 );
             }
@@ -75,9 +96,10 @@ namespace PageScrapper
           
             manager.end = true;
 
-            manager.SetURL(Set.URL);
+            
+            manager.SetURL(Set.URL.ToString());
             manager.setRestriction(Set.dom, Set.subdom, Set.way);
-
+            
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
 

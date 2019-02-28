@@ -82,6 +82,7 @@ namespace logic
                 {
                     end = true;
                     skippedChanges();
+                    endOfSearch();
                     return;
                 }
                 
@@ -92,8 +93,10 @@ namespace logic
         }
 
         public delegate void changes();
-
         public changes skippedChanges;
+
+        public delegate void searchIsEnd();
+        public searchIsEnd endOfSearch;
         
         public void Clear()
         {

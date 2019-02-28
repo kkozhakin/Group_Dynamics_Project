@@ -11,12 +11,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using logic;
 
 namespace PageScrapper
 {
     static class Set
     {
-        public static string URL= "";
+        public static Link URL;
         public static string subdom = "";
         public static string dom = "";
         public static string way = "";
@@ -36,11 +37,18 @@ namespace PageScrapper
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Set.thread_num = (int)slider.Value;
-            Set.URL = URLBox.Text;
-            Set.dom = Domen.Text;
-            Set.subdom = SubDomen.Text;
-            Set.way = Way.Text;
+            try
+            {
+                Set.thread_num = (int)slider.Value;
+                Set.URL = new Link(URLBox.Text);
+                Set.dom = Domen.Text;
+                Set.subdom = SubDomen.Text;
+                Set.way = Way.Text;
+            }
+            catch (Exception ) {
+                MessageBox.Show("Некорректные данные!");
+                return;
+            }
             this.Close();
         }
     }

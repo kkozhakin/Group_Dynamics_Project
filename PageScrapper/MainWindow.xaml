@@ -37,21 +37,23 @@
             
 			<Button Name ="SaveButton" 
                     Content="Сохранить" 
-					 Height="50" 
-					 Width="70" 
-					 Margin="1 1 1 0" 
-					 Foreground="White"  
-					 Background="#015aaa"
-                     Click="save_click"/>
+					Height="50" 
+					Width="70" 
+					Margin="1 1 1 0" 
+					Foreground="White"  
+					Background="#015aaa"
+                    Click="save_click"
+                    IsEnabled="False"/>
 			
 			<Button Name="StartButton"    
                     Content="Старт" 
-					 Height="50" 
-					 Width="70"
-					 Margin="1 1 1 0" 
-					 Foreground="White"  
-					 Background="#015aaa"
-					 Click="start_click"/>
+					Height="50" 
+					Width="70"
+					Margin="1 1 1 0" 
+					Foreground="White"  
+					Background="#015aaa"
+					Click="start_click"
+                    IsEnabled="False"/>
             
 			<Button Name="PauseButton" 
                     Content="Пауза" 
@@ -75,20 +77,20 @@
             
 			<Button Name="HelpButton" 
                     Content="Справка" 
-                     Height="50" 
-                     Width="70" 
-                     Margin="1 1 0 0" 
-                     Foreground="White"  
-                     Background="#015aaa"
-                     Click="help_click"/>
+                    Height="50" 
+                    Width="70" 
+                    Margin="1 1 0 0" 
+                    Foreground="White"  
+                    Background="#015aaa"
+                    Click="help_click"/>
             
 		</WrapPanel>
         
         <ListBox Grid.Row="1"
-                 Name="References"
-                 BorderThickness="2"
-                 BorderBrush="#015aaa"
-                 Margin="0"/>
+                Name="References"
+                BorderThickness="2"
+                BorderBrush="#015aaa"
+                Margin="0"/>
         <Border Grid.Row="2" 
                 BorderBrush="#015aaa" 
                 BorderThickness="2"/>
@@ -111,17 +113,31 @@
 
             <TextBlock Grid.Column="0"
                        Name="DoneText"
-                       Text="Пройдено: 0"
+                       Text="Пройдено:"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        Margin="4 2 0 0"/>
 
             <TextBlock Grid.Column="0"
+                       Name="DoneTextNumber"
+                       Text="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="68 2 0 0"/>
+
+            <TextBlock Grid.Column="0"
                        Name="BrokenText"
-                       Text="Битых: 0"
+                       Text="Некорректных:"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom"
                        Margin="4 0 0 2"/>
+            
+            <TextBlock Grid.Column="0"
+                       Name="BrokenTextNumber"
+                       Text="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="90 0 0 2"/>
 
             <ProgressBar Name="pbStatus"
                 Grid.Column="2"

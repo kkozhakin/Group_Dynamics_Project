@@ -32,6 +32,7 @@ namespace PageScrapper
         {
             InitializeComponent();
             manager.anouncer = AddBrokenLink;
+            
            
 
         }
@@ -60,6 +61,7 @@ namespace PageScrapper
             if(running)
                 manager.Clear();
             manager.end = true;
+
             
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
@@ -67,11 +69,14 @@ namespace PageScrapper
             pbStatus.IsIndeterminate = true;
             pbText.Text = "В процессе...";
 
+            
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
             StartButton.IsEnabled = false;
             StopButton.IsEnabled = true;
             PauseButton.IsEnabled = true;
+
+           
         }
         private void stop_click(object sender, RoutedEventArgs e)
         {
@@ -91,7 +96,7 @@ namespace PageScrapper
         {
             pbStatus.IsIndeterminate = false;
             pbText.Text = "Приостановлено";
-
+            
             StartButton.IsEnabled = true;
             PauseButton.IsEnabled = false;
         }

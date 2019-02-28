@@ -42,19 +42,23 @@ namespace logic
 
                 if (link.ToString().EndsWith("//"))
                 {
+                    Interlocked.Increment(ref manager.scipped);
                     continue;
                 }
                 if (link.ToString() == (link.Parent?.ToString() +"/"))
                 {
+                    Interlocked.Increment(ref manager.scipped);
                     continue;
                 }
                 if (link.ToString() == link.Parent?.ToString())
                 {
+                    Interlocked.Increment(ref manager.scipped);
                     continue;
                 }
                 if (manager.links.ContainsKey(link))
                 {
-                    
+                    Interlocked.Increment(ref manager.scipped);
+
                     if (manager.links[link] != null)
                     {
                         manager.links[link].Add(link.Parent);
@@ -95,6 +99,7 @@ namespace logic
             }
             catch (Exception ex)
             {
+                Interlocked.Increment(ref manager.bad);
                 link.ErrorComments = ex.Message;
                 manager.anouncer(link);
                 if (manager.links.ContainsKey(link))
@@ -140,6 +145,7 @@ namespace logic
             {
                 link.ErrorComments = ex.Message;
                 bad = true;
+                Interlocked.Increment(ref manager.bad);
 
             }
 

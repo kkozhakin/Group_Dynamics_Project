@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PageScrapper"
 		Closing="Window_Closing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="498" MaxHeight="600" MaxWidth="498" MinHeight="400" MinWidth="498">
+        Title="MainWindow" Height="450" Width="504" MaxHeight="600" MaxWidth="510" MinHeight="400" MinWidth="498">
 	<Grid ShowGridLines="True" Name="MainGrid" Margin="0,0,-0.4,0">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="50">
@@ -16,7 +16,7 @@
 			
 		</Grid.RowDefinitions>
 		<WrapPanel Grid.Row="0">
-			<Image Source="logo.png" Margin="1 1 1 0"/>
+			<Image Source="imj/logo.png" Margin="2 1 1 0"/>
 			<Button Content="Настройки" 
 					Height="50" 
 					Width="70" 

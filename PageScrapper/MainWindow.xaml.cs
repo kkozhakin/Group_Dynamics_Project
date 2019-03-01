@@ -149,7 +149,6 @@ namespace PageScrapper
             EraseButton.IsEnabled = true;
             PauseButton.IsEnabled = false;
             SaveButton.IsEnabled = true;
-            
         }
         private void save_click(object sender, RoutedEventArgs e)
         {
@@ -157,7 +156,9 @@ namespace PageScrapper
         }
         private void help_click(object sender, RoutedEventArgs e)
         {
-
+            Help help = new Help();
+            help.Owner = this;
+            help.ShowDialog();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

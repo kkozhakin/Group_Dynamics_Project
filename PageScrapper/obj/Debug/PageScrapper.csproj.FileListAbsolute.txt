@@ -16,3 +16,5 @@ C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageSc
 C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageScrapper\obj\Debug\PageScrapper.csproj.CoreCompileInputs.cache
 C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageScrapper\obj\Debug\PageScrapper.exe
 C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageScrapper\obj\Debug\PageScrapper.pdb
+C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageScrapper\obj\Debug\Help.g.cs
+C:\Users\kusak\OneDrive\Рабочий стол\GD\Group_Dynamics_Project\PageScrapper\obj\Debug\Help.baml

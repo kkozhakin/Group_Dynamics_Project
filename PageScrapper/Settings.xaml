@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PageScrapper"
         mc:Ignorable="d"
         Title="Settings" 
+        Icon="imj\logo_с_hse.jpg"
 		Height="390" 
 		Width="300"  
 		MinHeight="390" 

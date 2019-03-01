@@ -94,6 +94,29 @@ namespace logic
             
         }
 
+        public string GetBadLinks()
+        {
+            StringBuilder s = new StringBuilder();
+            foreach(var pair in links)
+            {
+                string tmp = "";
+                if (pair.Value != null) 
+                {
+                    tmp += "Bad link: " + pair.Key.ToString() + "\n";
+                    tmp += $"\tComment: {pair.Key.ErrorComments}\n";
+                    foreach(var lk in pair.Value)
+                    {
+                        tmp += $"\tSource: {lk}\n";
+                    }
+                    s.Append(tmp);
+                    s.Append("_______________\n");
+                }
+                
+               
+            }
+            return s.ToString();
+        }
+
         public delegate void changes();
         public changes skippedChanges;
 

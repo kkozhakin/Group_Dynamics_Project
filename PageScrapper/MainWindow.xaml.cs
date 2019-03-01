@@ -74,7 +74,7 @@ namespace PageScrapper
                         SettingsButton.IsEnabled = true;
                         SaveButton.IsEnabled = true;
                         StartButton.IsEnabled = false;
-                        EraseButton.IsEnabled = false;
+                        EraseButton.IsEnabled = true;
                         PauseButton.IsEnabled = false;
                     }
                 );
@@ -103,12 +103,13 @@ namespace PageScrapper
         }
         private void start_click(object sender, RoutedEventArgs e)
         {
-          
             manager.end = true;
-
             
             manager.SetURL(Set.URL.ToString());
-            manager.setRestriction(Set.dom, Set.subdom, Set.way);
+            if (Set.dom == "")
+                manager.setRestriction(Set.URL.MainDomen, Set.subdom, Set.way);
+             else
+                manager.setRestriction(Set.dom, Set.subdom, Set.way);
             
             manager_tr = new Thread(manager.BeginProcess);
             manager_tr.Start(Set.thread_num);
@@ -152,6 +153,24 @@ namespace PageScrapper
         }
         private void save_click(object sender, RoutedEventArgs e)
         {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Document"; // Default file name
+            dlg.DefaultExt = ".text"; // Default file extension
+            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
+            {
+                // Save document
+                string filename = dlg.FileName;
+                using (StreamWriter writetext = new StreamWriter(filename))
+                {
+                    writetext.WriteLine(manager.GetBadLinks());
+                }
+            }
 
         }
         private void help_click(object sender, RoutedEventArgs e)

@@ -78,11 +78,15 @@ namespace logic
                 {
                     active = active || parser.alive;
                 }
-                if (!active || end)
-                {
+                if (!active)
+                { 
                     end = true;
                     skippedChanges();
                     endOfSearch();
+                    return;
+                }
+                if (end)
+                {
                     return;
                 }
           
@@ -100,6 +104,9 @@ namespace logic
         {
             inProcess = new ConcurrentQueue<Link>();
             links = new ConcurrentDictionary<Link, ConcurrentBag<Link>>();
+            done = 0;
+            bad = 0;
+            scipped = 0;
         }
 
         public volatile bool end = false;

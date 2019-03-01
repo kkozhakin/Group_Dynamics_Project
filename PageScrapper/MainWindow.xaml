@@ -65,14 +65,14 @@
                     Click="pause_click"
                     IsEnabled="False"/>
             
-			<Button Name="StopButton" 
-                    Content="Стоп" 
+			<Button Name="EraseButton" 
+                    Content="Очистить" 
                     Height="50" 
                     Width="70" 
                     Margin="1 1 1 0" 
                     Foreground="White"  
                     Background="#015aaa"
-                    Click="stop_click"
+                    Click="erase_click"
                     IsEnabled="False"/>
             
 			<Button Name="HelpButton" 

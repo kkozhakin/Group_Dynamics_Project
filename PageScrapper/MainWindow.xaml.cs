@@ -69,12 +69,12 @@ namespace PageScrapper
                     {
                         pbStatus.IsIndeterminate = false;
                         pbText.Text = "Готово!";
-                        MessageBox.Show($" Поиск завершен!\n Просмотренно: {manager.done}\n Повреждённых: {manager.bad}");
+                        MessageBox.Show($" Просмотренно: {manager.done}\n Повреждённых: {manager.bad}");
 
                         SettingsButton.IsEnabled = true;
                         SaveButton.IsEnabled = true;
                         StartButton.IsEnabled = false;
-                        StopButton.IsEnabled = false;
+                        EraseButton.IsEnabled = false;
                         PauseButton.IsEnabled = false;
                     }
                 );
@@ -97,9 +97,9 @@ namespace PageScrapper
 
         private void settings_click(object sender, RoutedEventArgs e)
         {
-            Settings set = new Settings();
-            set.Owner = this;
-            set.ShowDialog();
+                Settings set = new Settings();
+                set.Owner = this;
+                set.ShowDialog();
         }
         private void start_click(object sender, RoutedEventArgs e)
         {
@@ -120,34 +120,30 @@ namespace PageScrapper
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
             StartButton.IsEnabled = false;
-            StopButton.IsEnabled = true;
+            EraseButton.IsEnabled = true;
             PauseButton.IsEnabled = true;
-
-           
         }
-        private void stop_click(object sender, RoutedEventArgs e)
+        private void erase_click(object sender, RoutedEventArgs e)
         {
             manager.end = true;
             manager.Clear();
 
-            pbStatus.IsIndeterminate = false;
-            pbText.Text = "Остановлено";
-
-            SettingsButton.IsEnabled = true;
-            SaveButton.IsEnabled = true;
-            StartButton.IsEnabled = true;
-            StopButton.IsEnabled = false;
-            PauseButton.IsEnabled = false;
-
+            References.Items.Clear();
+            pbText.Text = "Очищено";
+            
         }
         private void pause_click(object sender, RoutedEventArgs e)
         {
-            pbStatus.IsIndeterminate = false;
-            pbText.Text = "Приостановлено";
+            manager.end = true;
 
-         
+            pbStatus.IsIndeterminate = false;
+            pbText.Text = "Остановлено";
+
             StartButton.IsEnabled = true;
+            EraseButton.IsEnabled = true;
             PauseButton.IsEnabled = false;
+            SaveButton.IsEnabled = true;
+            
         }
         private void save_click(object sender, RoutedEventArgs e)
         {

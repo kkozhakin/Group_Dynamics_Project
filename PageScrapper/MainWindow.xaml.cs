@@ -88,9 +88,12 @@ namespace PageScrapper
             this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                 (ThreadStart)delegate ()
                 {
-                    ListBoxItem itm = new ListBoxItem();
-                    itm.Content = link.ToString();
-                    References.Items.Add(itm);
+                    if (!link.ErrorComments.Contains("503"))
+                    {
+                        ListBoxItem itm = new ListBoxItem();
+                        itm.Content = link.ToString();
+                        References.Items.Add(itm);
+                    }
                 }
             );
         }

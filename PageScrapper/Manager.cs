@@ -102,6 +102,10 @@ namespace logic
                 string tmp = "";
                 if (pair.Value != null) 
                 {
+                    if (pair.Key.ErrorComments.Contains("503"))
+                    {
+                        continue;
+                    }
                     tmp += "Bad link: " + pair.Key.ToString() + "\n";
                     tmp += $"\tComment: {pair.Key.ErrorComments}\n";
                     foreach(var lk in pair.Value)

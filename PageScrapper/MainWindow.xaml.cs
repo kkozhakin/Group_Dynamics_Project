@@ -48,6 +48,7 @@ namespace PageScrapper
                 );
             }
         }
+
         public void updateStat()
         {
             {

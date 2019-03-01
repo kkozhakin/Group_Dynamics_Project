@@ -11,8 +11,6 @@ namespace PageScrapper
     {
         public delegate void start_button();
         public static start_button start_button_enable;
-
-
         public static Link URL; //= new Link("");
         public static string subdom = "";
         public static string dom = "";

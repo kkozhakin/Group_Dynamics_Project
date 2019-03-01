@@ -23,8 +23,7 @@ namespace logic
         public void run()
         {
             while (!manager.end)
-            {
-                
+            {               
                 manager.inProcess.TryDequeue(out Link link);
                 if (link == null)
                 {

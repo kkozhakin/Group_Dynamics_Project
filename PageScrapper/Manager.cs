@@ -11,6 +11,10 @@ namespace logic
 {
     class Manager
     {
+        public delegate void changes();
+        public changes skippedChanges;
+        public delegate void searchIsEnd();
+        public searchIsEnd endOfSearch;
         public delegate void GetBroken(Link link);
         public GetBroken anouncer;
         readonly static Manager manager;
@@ -61,7 +65,6 @@ namespace logic
 
             for (int i = 0; i < n; i++)
             {
-
                 WebParser parser = new WebParser();
                 parsers[i] = parser;
                 tasks[i] = new Thread(parser.run);
@@ -91,9 +94,7 @@ namespace logic
                 {
                     return;
                 }
-          
             }
-            
         }
 
         public string GetBadLinks()
@@ -116,18 +117,10 @@ namespace logic
                     }
                     s.Append(tmp);
                     s.Append("_______________\n");
-                }
-                
-               
+                }            
             }
             return s.ToString();
         }
-
-        public delegate void changes();
-        public changes skippedChanges;
-
-        public delegate void searchIsEnd();
-        public searchIsEnd endOfSearch;
         
         public void Clear()
         {
@@ -141,8 +134,7 @@ namespace logic
             Set.dom = "";
             Set.way = "";
             Set.thread_num = 4;
-
-        skippedChanges();
+            skippedChanges();
         }
 
         public volatile bool end = false;

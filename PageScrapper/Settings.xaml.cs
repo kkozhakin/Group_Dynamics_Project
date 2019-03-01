@@ -16,7 +16,6 @@ using PageScrapper;
 
 namespace PageScrapper
 {
-    
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
@@ -35,7 +34,6 @@ namespace PageScrapper
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
             try
             {
                 Set.thread_num = (int)slider.Value;

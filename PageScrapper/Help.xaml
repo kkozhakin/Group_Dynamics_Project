@@ -14,7 +14,6 @@
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="20,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="454"><Run Text="3. Пауза. В случае, если Вы хотите принудительно остановить поиск, то Вам следует нажать кнопку &quot;Пауза&quot;. Также после её нажатия поиск можно воз"/><Run Text="о"/><Run Text="бновить нажатием кнопки &quot;Старт&quot; без потери имеющагося прогресса."/></TextBlock>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="20,217,0,0" TextWrapping="Wrap" Text="4. Очистить. Данная кнопка удаляет весь прогресс, полученный ранее, возвращая пограмму к виду при запуске." VerticalAlignment="Top" Height="37" Width="454"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="20,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="454"><Run Text="5. Сохранить. После окончания поиска (принудительного при нажатии &quot;Пауза&quot;, или же после прохождения всего установленного пространства ссылок) вы можете экспортировать таблицу, хранящую найденные некорректные ссылки, нажав кнопку &quot;Сохранить&quot;"/><Run Text="."/></TextBlock>
-
-
+        
     </Grid>
 </Window>

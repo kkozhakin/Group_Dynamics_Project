@@ -13,7 +13,6 @@
             <RowDefinition 
                 Height="50"/>
 
-
             <RowDefinition
                 Height="1*"/>
 

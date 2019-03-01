@@ -26,11 +26,16 @@ namespace PageScrapper
         {
             //Window.ResizeModeProperty = NoR
             InitializeComponent();
-            slider.Value = 4;    
+            slider.Value = 4;
+            Domen.Text = Set.dom;
+            SubDomen.Text = Set.subdom;
+            Way.Text = Set.way;
+            URLBox.Text = Set.URL?.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 Set.thread_num = (int)slider.Value;

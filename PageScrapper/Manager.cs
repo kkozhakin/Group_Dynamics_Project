@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections.Concurrent;
+using PageScrapper;
+
 namespace logic
 {
     class Manager
@@ -134,7 +136,13 @@ namespace logic
             done = 0;
             bad = 0;
             scipped = 0;
-            skippedChanges();
+            Set.URL = null;
+            Set.subdom = "";
+            Set.dom = "";
+            Set.way = "";
+            Set.thread_num = 4;
+
+        skippedChanges();
         }
 
         public volatile bool end = false;

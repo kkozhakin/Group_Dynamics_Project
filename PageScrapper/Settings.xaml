@@ -58,8 +58,6 @@
         <TextBox 
 			Name="URLBox" Height="30" 
 			FontSize="20"
-			
-			
 			/>
 
         <TextBlock 
@@ -72,7 +70,6 @@
         <TextBox Name="SubDomen" 
 				 Height="30" 
 				 FontSize="20"
-				 
 			 />
 
         <TextBlock 

@@ -13,7 +13,7 @@ namespace PageScrapper
         public static start_button start_button_enable;
 
 
-        public static Link URL;
+        public static Link URL; //= new Link("");
         public static string subdom = "";
         public static string dom = "";
         public static string way = "";

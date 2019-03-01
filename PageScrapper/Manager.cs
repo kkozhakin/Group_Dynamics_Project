@@ -85,11 +85,9 @@ namespace logic
                     endOfSearch();
                     return;
                 }
-                
           
             }
-
-
+            
         }
 
         public delegate void changes();

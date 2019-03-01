@@ -34,8 +34,20 @@ namespace PageScrapper
             manager.anouncer = AddBrokenLink;
             manager.skippedChanges = updateStat;
             manager.endOfSearch = killSearch;
+            Set.start_button_enable = st_bt_en;
         }
 
+        public void st_bt_en()
+        {
+            {
+                this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                    (ThreadStart)delegate ()
+                    {
+                        StartButton.IsEnabled = true;
+                    }
+                );
+            }
+        }
         public void updateStat()
         {
             {
@@ -59,13 +71,11 @@ namespace PageScrapper
                         pbText.Text = "Готово!";
                         MessageBox.Show($" Поиск завершен!\n Просмотренно: {manager.done}\n Повреждённых: {manager.bad}");
 
-
                         SettingsButton.IsEnabled = true;
                         SaveButton.IsEnabled = true;
                         StartButton.IsEnabled = false;
                         StopButton.IsEnabled = false;
                         PauseButton.IsEnabled = false;
-
                     }
                 );
             }
@@ -105,7 +115,7 @@ namespace PageScrapper
 
             pbStatus.IsIndeterminate = true;
             pbText.Text = "В процессе...";
-
+            References.Items.Clear();
             
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
@@ -118,6 +128,7 @@ namespace PageScrapper
         private void stop_click(object sender, RoutedEventArgs e)
         {
             manager.end = true;
+            manager.Clear();
 
             pbStatus.IsIndeterminate = false;
             pbText.Text = "Остановлено";
@@ -133,14 +144,14 @@ namespace PageScrapper
         {
             pbStatus.IsIndeterminate = false;
             pbText.Text = "Приостановлено";
-            
+
+         
             StartButton.IsEnabled = true;
             PauseButton.IsEnabled = false;
         }
         private void save_click(object sender, RoutedEventArgs e)
         {
 
-            
         }
         private void help_click(object sender, RoutedEventArgs e)
         {

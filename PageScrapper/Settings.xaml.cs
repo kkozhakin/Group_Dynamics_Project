@@ -12,17 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using logic;
+using PageScrapper;
 
 namespace PageScrapper
 {
-    static class Set
-    {
-        public static Link URL;
-        public static string subdom = "";
-        public static string dom = "";
-        public static string way = "";
-        public static int thread_num = 4;
-    }
+    
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
@@ -32,7 +26,7 @@ namespace PageScrapper
         {
             //Window.ResizeModeProperty = NoR
             InitializeComponent();
-            slider.Value = 4;
+            slider.Value = 4;    
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,6 +43,7 @@ namespace PageScrapper
                 MessageBox.Show("Некорректные данные!");
                 return;
             }
+            Set.start_button_enable();
             this.Close();
         }
     }

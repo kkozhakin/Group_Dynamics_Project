@@ -107,6 +107,7 @@ namespace logic
             done = 0;
             bad = 0;
             scipped = 0;
+            skippedChanges();
         }
 
         public volatile bool end = false;

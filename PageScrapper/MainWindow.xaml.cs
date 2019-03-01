@@ -120,7 +120,7 @@ namespace PageScrapper
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
             StartButton.IsEnabled = false;
-            EraseButton.IsEnabled = true;
+            EraseButton.IsEnabled = false;
             PauseButton.IsEnabled = true;
         }
         private void erase_click(object sender, RoutedEventArgs e)
@@ -130,7 +130,13 @@ namespace PageScrapper
 
             References.Items.Clear();
             pbText.Text = "Очищено";
-            
+
+            SettingsButton.IsEnabled = true;
+            SaveButton.IsEnabled = false;
+            StartButton.IsEnabled = false;
+            EraseButton.IsEnabled = false;
+            PauseButton.IsEnabled = false;
+
         }
         private void pause_click(object sender, RoutedEventArgs e)
         {

@@ -109,14 +109,14 @@ namespace logic
                     {
                         continue;
                     }
-                    tmp += "Bad link: " + pair.Key.ToString() + "\n";
-                    tmp += $"\tComment: {pair.Key.ErrorComments}\n";
-                    foreach(var lk in pair.Value)
+                    tmp += "Bad link: " + pair.Key.ToString() + Environment.NewLine;
+                    tmp += $"\tComment: {pair.Key.ErrorComments}{Environment.NewLine}";
+                    foreach (var lk in pair.Value.Distinct())
                     {
-                        tmp += $"\tSource: {lk}\n";
+                        tmp += $"\tSource: {lk}{Environment.NewLine}";
                     }
                     s.Append(tmp);
-                    s.Append("_______________\n");
+                    s.Append($"_______________{Environment.NewLine}");
                 }            
             }
             return s.ToString();

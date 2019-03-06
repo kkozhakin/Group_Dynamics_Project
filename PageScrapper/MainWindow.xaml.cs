@@ -120,7 +120,6 @@ namespace PageScrapper
 
             pbStatus.IsIndeterminate = true;
             pbText.Text = "В процессе...";
-            References.Items.Clear();
             
             SettingsButton.IsEnabled = false;
             SaveButton.IsEnabled = false;
@@ -141,6 +140,7 @@ namespace PageScrapper
             StartButton.IsEnabled = false;
             EraseButton.IsEnabled = false;
             PauseButton.IsEnabled = false;
+            References.Items.Clear();
 
         }
         private void pause_click(object sender, RoutedEventArgs e)

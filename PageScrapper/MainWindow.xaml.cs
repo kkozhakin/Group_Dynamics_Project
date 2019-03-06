@@ -72,7 +72,7 @@ namespace PageScrapper
                         pbText.Text = "Готово!";
                         MessageBox.Show($" Просмотренно: {manager.done}\n Повреждённых: {manager.bad}");
 
-                        SettingsButton.IsEnabled = true;
+                        SettingsButton.IsEnabled = false;
                         SaveButton.IsEnabled = true;
                         StartButton.IsEnabled = false;
                         EraseButton.IsEnabled = true;
@@ -107,7 +107,7 @@ namespace PageScrapper
         }
         private void start_click(object sender, RoutedEventArgs e)
         {
-            manager.end = true;
+            //manager.end = true;
             
             manager.SetURL(Set.URL.ToString());
             if (Set.dom == "")
